@@ -1,14 +1,14 @@
-import { ACTION_TYPE, Action, User } from "../types";
+import { USER_ACTION, Action, User } from "../types";
 
 const user: User = { id: 1, name: "jun", age: 30 };
 
 const userReducer = (state = {}, action: Action) => {
   switch (action.type) {
-    case ACTION_TYPE.GET_USER:
+    case USER_ACTION.GET_USER:
       return user;
-    case ACTION_TYPE.LOGIN:
+    case USER_ACTION.LOGIN:
       return user;
-    case ACTION_TYPE.LOGOUT:
+    case USER_ACTION.LOGOUT:
       return null;
     default:
       return user;

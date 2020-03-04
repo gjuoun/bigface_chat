@@ -1,13 +1,13 @@
-import { ACTION_TYPE } from "../types";
+import { USER_ACTION } from "../types";
 
 const todos = [
   { title: "do 1", completed: true },
   { title: "do 2", completed: false }
 ];
 
-const todosReducer = (state = {}, action: ACTION_TYPE) => {
+const todosReducer = (state = {}, action: USER_ACTION) => {
   switch (action) {
-    case ACTION_TYPE.GET_TODOS:
+    case USER_ACTION.GET_TODOS:
       return todos;
     default:
       return todos;

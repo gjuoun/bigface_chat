@@ -1,12 +1,16 @@
-export enum ACTION_TYPE {
+export enum USER_ACTION {
   GET_USER,
   GET_TODOS,
   LOGIN ,
   LOGOUT
 }
 
+export enum FRIENDS_ACTION{
+  FETCH_FRIENDS,
+}
+
 export interface Action {
-  type: ACTION_TYPE;
+  type: USER_ACTION | FRIENDS_ACTION;
   payload?: any;
 }
 
@@ -18,4 +22,5 @@ export interface User {
 
 export interface State {
   user: User;
+  friends: any[]
 }

@@ -1,18 +1,21 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core";
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { State, User } from "../../types";
+import { User } from "../../types";
+import {fetchFriends} from '../../actions'
 
 const wideButton = css({
   width: "10rem"
 });
 
 interface Props{
-  user: User
+  user: User,
 }
 
 const Footer: React.FC<Props> = ({user}) => {
+
+
   if(!user){
     return null
   }
@@ -54,9 +57,9 @@ const Footer: React.FC<Props> = ({user}) => {
   );
 };
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state: {user: User}) => {
   return {
-    user: state.user
+    user: state.user,
   };
 };
 
