@@ -4,11 +4,6 @@ import React from "react";
 import Conversation from "./Conversation";
 
 const scrollBarStyle = css`
-  display： flex;
-  flex-direction: column;
-
-  border-right: 1px solid lightgrey;
-  overflow-y: scroll;
   &::-webkit-scrollbar {
     width: 8px;
   }
@@ -20,51 +15,44 @@ const scrollBarStyle = css`
   }
 `;
 
+const messageStyle = css`
+  display: block;
+  border-bottom: 1px solid grey;
+  padding: 10px;
+`;
+
 const ChatPage: React.FC = () => {
   return (
-    <div className="hero-body " style={{ alignItems: "stretch" }}>
-      <div className="container ">
-        <div
-          className="columns box is-marginless is-paddingless"
-          style={{ height: "100%" }}
-        >
-          <div className="column is-4 " css={scrollBarStyle}>
-            {/* <Conversation></Conversation> */}
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            s<div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-            <div>hasdf <br/></div>
-          </div>
-          <div className="column " style={{ alignItems: "stretch" }}>
-            {/* <div className="box" style={{height: `100%`}}> */}
-            {/* 23 */}
-            {/* </div> */}
-          </div>
+    <div className="container " css={css`margin: auto`}>
+      <div className="columns box is-marginless is-paddingless" >
+        <div className="column is-4 ">
+          <h2>Left</h2>
+          {/* <p css={messageStyle}>haha</p> */}
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>s<p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+          <p>Haha</p>
+        </div>
+        <div className="column">
+          <h2>right</h2>
         </div>
       </div>
     </div>

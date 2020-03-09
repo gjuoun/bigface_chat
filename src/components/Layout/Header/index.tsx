@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { State, User } from "../../../types";
 import { login, logout } from "../../../actions";
-import Button from "./../../Bulma/Button";
 
 interface Props {
   user: User;
@@ -11,91 +10,68 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ user, login, logout }) => {
-  const renderAboutButton = () => {
-    if (!user) {
-      return (
-        <a href="/#" className="navbar-item">
-          About Bigface
-        </a>
-      );
-    }
-    return (
-      <a href="/#" className="navbar-item">
-        Welcome, {user.name} !
-      </a>
-    );
-  };
-
-  const renderLoginButton = () => {
-    if (!user) {
-      return (
-        <span className="navbar-item">
-          <a
-            href="/#"
-            className="button is-info is-inverted"
-            onClick={() => {
-              login();
-            }}
-          >
-            <span className="icon">
-              <i className="fa fa-sign-in"></i>
-            </span>
-            <span>Login</span>
-          </a>
-        </span>
-      );
-    }
-
-    return (
-      <span className="navbar-item">
-        <a
-          href="/#"
-          className="button is-info is-inverted"
-          onClick={() => {
-            logout();
-          }}
-        >
-          <span className="icon">
-            <i className="fa fa-sign-out"></i>
-          </span>
-          <span>Logout</span>
-        </a>
-      </span>
-    );
-  };
-
   return (
-    <div className="hero-head">
-      <nav className="navbar">
-        <div className="container">
-          <div className="navbar-brand">
-            <a href="/#" className="navbar-item">
-              {/* <img
-                src="https://bulma.io/images/bulma-type-white.png"
-                alt="Logo"
-              /> */}
-              <span className="is-size-4" >Bigface Chat</span>
-            </a>
-            <span
-              className="navbar-burger burger"
-              data-target="navbarMenuHeroB"
-            >
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </div>
-          <div id="navbarMenuHeroB" className="navbar-menu">
+    <nav role="navigation" className="navbar container is-fixed-top" aria-label="main navigation">
+        <div className="navbar-brand">
+          <a href="https://www.google.ca" className="navbar-item">
+            <img
+              src="https://bulma.io/images/bulma-logo.png"
+              alt="Bulma: Free, open source, and modern CSS framework based on Flexbox"
+              width="112"
+              height="28"
+            />
+          </a>
+          <a
+          role="button"
+          className="navbar-burger"
+          aria-label="menu"
+          aria-expanded="false"
+          href="www.baidu.com"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+        </div>
 
-            <div className="navbar-end">
-              {renderAboutButton()}
-              {renderLoginButton()}
+        {/* navbar Button  */}
+        <div className="navbar-menu is-active ">
+          <div className="navbar-end">
+            {/* dropdown button */}
+            <div className="navbar-item has-dropdown is-hoverable">
+              <a href="/#" className="navbar-link">
+                More
+              </a>
+              <div className="navbar-dropdown">
+                <a href="/#" className="navbar-item">
+                  About
+                </a>
+                <a href="/#" className="navbar-item">
+                  Jobs
+                </a>
+                <a href="/#" className="navbar-item">
+                  Contact
+                </a>
+              </div>
+            </div>
+            <div className="navbar-item">
+              <div className="buttons">
+                <a href="/#" className="button is-primary">
+                  <span className="icon"><i className="fa fa-twitter"></i></span>
+                  <span>Twitter</span>
+                </a>
+                <a href="/#" className="button is-light">
+                  <span className="icon"><i className="fa fa-sign-in"></i></span>
+                  <span>Login</span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
+
+        
       </nav>
-    </div>
-  );
+  )
 };
 
 const mapStateToProps = (state: State) => {
